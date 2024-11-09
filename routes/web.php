@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
@@ -25,3 +26,6 @@ Route::post('/admin/barang/update/{id}', [AdminController::class, 'update_barang
 Route::get('/kasir', function () {
     return view('layouts.master');
 });
+
+Route::get('/admin/laporan', [LaporanController::class, 'index']);
+Route::get('/admin/laporan/barang', [LaporanController::class, 'cetak_barang']);
